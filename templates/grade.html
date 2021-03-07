@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Matérias</h1>
+<ul class="list-group">
+    {% for materia in materias %}
+    <li class="list-group-item"><a href="materia/{{materia.codigo}}">{{materia.nome}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
