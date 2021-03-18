@@ -6,18 +6,22 @@
         <p class="lead">Aplicação para ajudar alunos da UFABC a planejar sua grade</p>
     </div>
     <div class="jumbotron text-center">
-        <h2>Adicione seu curso</h2>
-        <p class="lead">Selecione o curso no qual está matriculado</p>
-        <select name="cursos" method="GET" action="/">
-            {% for cursos in cursos %}
-            <option value="{{cursos}}" SELECTED>{{cursos}}</option>"
-            {% endfor %}
-        </select>
-        <p class="lead">Cole o texto JSON abaixo:</p>
+
         <form role="form" method='POST' action='/'>
+
+            <h2>Adicione seu curso</h2>
+            <p class="lead">Selecione o curso no qual está matriculado</p>
+            <select name="curso" method="GET" action="/">
+                {% for cursos in cursos %}
+                <option value="{{cursos}}" SELECTED>{{cursos}}</option>"
+                {% endfor %}
+            </select>
+
+            <p class="lead">Cole o texto JSON abaixo:</p>
             <div class="form-group">
-                <input type="text" name="texto" class="form-control" id="text-box" placeholder="Cole o texto" autofocus required>
+                <input type="text" name="data_json" class="form-control" id="text-box" placeholder="Cole o texto" autofocus required>
             </div>
+
             <button type="submit" class="btn btn-default">Enviar</button>
         </form>
     </div>
